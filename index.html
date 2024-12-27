@@ -1,60 +1,25 @@
+<!-- complete chat updates for simplistic one page flow-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <style>
-        .typed {
-            font-size: 1.5rem;
-            color: var(--color-black);
-        }
 
-        .typed-cursor {
-            font-size: 1.5rem;
-            color: var(--color-black);
-        }
-    </style>
 </head>
 <body class="main-content">
-    <header class="section sec1 header active" data-id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape">
-                    <div class="image">
-                        <img src="img/hero.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="right-header">
-                <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                </div>
-                <img src="img/Haile-1of1-5x4.jpg" alt="Haile Image" class="hero-image" style="max-width: 100%; height: auto; display: block; margin-left: 0;">
-                <h1 class="name">
-                    <span style="color: black;">Yohannes Haile</span>
-                    <p>
-                        <span class="typed" id="typed"></span>
-                    </p>
-                    <p style="color: rgb(223, 226, 227);">
-                        Lorem22 ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <a href="" class="main-btn">
-                        <span class="btn-text" style="color: black;">CV</span>
-                        <span class="btn-icon" style="color: black;"><i class="fas fa-download"></i></span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </h1>
-            </div>
-        </div>
+    <header class="section sec1 header active" id="home">
+
     </header>
+    <!-- Adding in the sections again 12/26-->
     <main>
         <section class="section sec2 about" id="about"></section>
         <section class="section sec3 portfolio" id="portfolio"></section>
@@ -62,26 +27,69 @@
         <section class="section sec5 contact" id="contact"></section>
     </main>
 
+    <!-- Navigation Controls -->
     <div class="controls">
         <div class="control control-1 active-btn" data-id="home">
             <i class="bx bx-user"></i>
+            <!--this is the message next to the button-->
+            <span>Home</span>
         </div>
         <div class="control control-2" data-id="about">
             <i class="bx bx-file-blank"></i>
+            <span>About</span>
         </div>
         <div class="control control-3" data-id="portfolio">
             <i class="bx bx-server"></i>
+            <span>Portfolio</span>
         </div>
         <div class="control control-4" data-id="blogs">
             <i class="bx bx-book-content"></i>
+            <span>Blogs</span>
         </div>
         <div class="control control-5" data-id="contact">
             <i class="bx bx-envelope"></i>
+            <span>Contact</span>
         </div>
     </div>
 
-    <!--cursor animation-->
+    <!--meant to allow active button to turn green-->  
     <script src="app.js"></script>
+</body>
+</html>
+
+<!--
+<div class="header-content">
+    <div class="left-column">
+            <div class="image">
+                img src="img/hero.png" alt=""
+            </div>
+        </div>
+    </div>
+    <div class="right-header">
+        <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+        </div>
+        <div class="left-header">
+            <img src="img/Haile-1of1-5x4.jpg" alt="Haile Image" class="hero-image" style="width: 200px; height:200px;">
+        </div></div>
+        <h1 class="name">
+            <span>Yohannes Haile</span>
+            <p>
+                <span class="typed" id="typed"></span>
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a href="" class="main-btn">
+                <span class="btn-text">Download CV</span>
+                <span class="btn-icon"><i class="fas fa-download"></i></span>
+            </a>
+        </h1>
+    </div>
+</div>
+-->
+
+<!--cursor animation MUST KEEP
     <script>
         var typed = new Typed('#typed', {
             strings: ["A Medical Student", "A Medical Researcher", "A Developer"],
@@ -90,9 +98,4 @@
             backDelay: 1000,
             loop: true
         });
-    </script>
-
-</body>
-</html>
-
-
+    </script>-->
