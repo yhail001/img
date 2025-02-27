@@ -87,3 +87,6 @@ app.get('/sitemap.xml', async function (req, res) {
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
+
+import { Analytics } from "@vercel/analytics/react";
+
