@@ -1,0 +1,8 @@
+AddType text/css .css
+
+# Allow POST requests to contactform.php
+<Files "contactform.php">
+    <Limit GET POST>
+        Require all granted
+    </Limit>
+</Files>

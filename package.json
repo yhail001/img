@@ -1,0 +1,28 @@
+{
+  "name": "img",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run build-css\" \"node server.js\"",
+    "build-css": "sass --watch public/scss/styles.scss:public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhail001/img.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yhail001/img/issues"
+  },
+  "homepage": "https://github.com/yhail001/img#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "sitemap": "^8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.83.4"
+  }
+}
