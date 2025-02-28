@@ -3,7 +3,7 @@
   "version": "1.0.0",
 "scripts": {
   "start": "node server.js",
-  "build": "cd .. && sass img/public/scss:img/public/css && cp -r img/public/* . && cp img/index.html . && cd img"
+  "build": "sass public/scss:public/css && cp -r public/* . && cp index.html ."
 },
   "repository": {
     "type": "git",
