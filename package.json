@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
-    "build": "sass scss:css"
+    "build": "sass scss:css",
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
