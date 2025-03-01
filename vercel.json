@@ -9,8 +9,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "/maintenance.html",
-      "permanent": false
+      "destination": "/maintenance.html"
     }
   ]
 }
