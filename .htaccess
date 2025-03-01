@@ -6,6 +6,3 @@ AddType text/css .css
         Require all granted
     </Limit>
 </Files>
-
-# 307 Temporary Redirect for all traffic
-Redirect 307 / https://yohanneshaile.com

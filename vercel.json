@@ -5,5 +5,12 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/server.js" }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "/maintenance.html",
+      "permanent": false
+    }
   ]
 }
