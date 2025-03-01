@@ -1,3 +1,11 @@
 {
-    "version": 2
-  }
+  "version": 2,
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" },
+    { "src": "*.php", "use": "@vercel/php" }
+  ],
+  "routes": [
+    { "src": "/(.*).php", "dest": "/$1.php" },  
+    { "src": "/(.*)", "dest": "/server.js" }      
+  ]
+}

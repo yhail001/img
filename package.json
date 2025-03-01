@@ -1,10 +1,10 @@
 {
   "name": "img",
   "version": "1.0.0",
-"scripts": {
-  "start": "node server.js",
-  "build": "sass public/scss:public/css && mkdir -p dist && cp -r public/* dist/ && cp index.html dist/"
-},
+  "scripts": {
+    "start": "node server.js",
+    "build": "sass scss:css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yhail001/img.git"
