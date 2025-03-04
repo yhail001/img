@@ -194,20 +194,20 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form method="POST" action="contactform.php">
+                        <form id="contactForm" method="POST" action="/contactform.php">
                             <div class="input-control i-c-2">
-                                <input type="text" name="name" required placeholder="Your Name">
-                                <input type="email" name="mail" required placeholder="Your Email">
+                                <input type="text" name="name" id="name" required placeholder="Your Name">
+                                <input type="email" name="email" id="email" required placeholder="Your Email">
                             </div>
                             <div class="input-control">
-                                <textarea name="message" cols="15" rows="8" placeholder="Your Message..."></textarea>
+                                <textarea name="message" id="message" cols="15" rows="8" placeholder="Your Message..." required></textarea>
                             </div>
+                            <div id="formMessage" class="form-message" style="display: none;"></div>
                             <div class="btn-con">
-                                <button type="submit" name="submit" class="main-btn">
-                                    <a href="" class="main-btn" target="_blank">
+                                <button type="submit" class="main-btn">
                                     <span class="btn-text">Send</span>
-                                    </a>
                                 </button>
+                            </div>
                         </form>
                     </div>
                 </div>
