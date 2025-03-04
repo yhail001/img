@@ -18,40 +18,40 @@
 // Contact Form Submission
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-
+    
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-
+    
             // Show loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-
+    
             // Get form data
             const formData = new FormData(contactForm);  // Use FormData
-
+            console.log("About to call fetch")
             try {
                 const response = await fetch('https://php-b00y.onrender.com/public/contactform.php', { // Update the URL here
                     method: 'POST',
                     body: formData
                 });
-
+    
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
+    
                 // Debugging: Log the raw response text
-
+    
                 const result = await response.json();
-
+                console.log("after call fetch success")
                 // Reset form state
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
-
+    
                 const messageEl = document.getElementById('formMessage');
-
+    
                 if (response.ok && result.success) {
                     // Show success message
                     messageEl.textContent = 'Thank you for your message! We will get back to you soon.';
@@ -64,17 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     messageEl.className = 'form-message error';
                     messageEl.style.display = 'block';
                 }
-
+    
                 // Hide message after 5 seconds
                 setTimeout(() => {
                     messageEl.style.display = 'none';
                 }, 5000);
-
+    
             } catch (error) {
                 console.log("Full Response:", response);  // Critical!
+                console.log("After call fetch failure")
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
-
+    
                 const messageEl = document.getElementById('formMessage');
                 messageEl.textContent = 'Network error. Please check your connection and try again.';
                 messageEl.className = 'form-message error';
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 /* logos-slide stuff? literally no idea what this does*/
 var original = document.querySelector('.logos-slide');
