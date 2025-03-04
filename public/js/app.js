@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 5000);
 
             } catch (error) {
-                console.error('Error:', error);
+                console.log("Full Response:", response);  // Critical!
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
 
