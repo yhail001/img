@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(contactForm);  // Use FormData
             console.log("About to call fetch")
             try {
-                const response = await fetch('https://php-b00y.onrender.com/public/contactform.php', { // Update the URL here
+                const response = await fetch('public/api/contactform.php', { // Update the URL here
                     method: 'POST',
                     body: formData
                 });
