@@ -15,6 +15,7 @@
     });
 })();
 
+
 // Contact Form Submission
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -30,22 +31,31 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Sending...';
     
             // Get form data
-            const formData = new FormData(contactForm);  // Use FormData
-            console.log("About to call fetch")
+            const formData = new FormData(contactForm);
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+            
             try {
-                const response = await fetch('https://php-b00y.onrender.com/public/contactform.php', { // Update the URL here
+                const response = await fetch('public/api/contactForm.js', {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formDataObject)
                 });
     
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                let result;
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    result = await response.json();
+                } else {
+                    // Handle non-JSON responses
+                    const text = await response.text();
+                    throw new Error(`Received non-JSON response: ${text}`);
                 }
     
-                // Debugging: Log the raw response text
-    
-                const result = await response.json();
-                console.log("after call fetch success")
                 // Reset form state
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
@@ -71,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 5000);
     
             } catch (error) {
-                console.log("Full Response:", response);  // Critical!
-                console.log("After call fetch failure")
+                console.error("Form submission error:", error);
+                
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
     
@@ -80,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 messageEl.textContent = 'Network error. Please check your connection and try again.';
                 messageEl.className = 'form-message error';
                 messageEl.style.display = 'block';
+                
+                setTimeout(() => {
+                    messageEl.style.display = 'none';
+                }, 5000);
             }
         });
     }
