@@ -1,5 +1,8 @@
 // api/contact.js - Serverless function for Vercel
+import dotenv from 'dotenv';
+require('dotenv').config();
 import nodemailer from 'nodemailer';
+
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -29,11 +32,13 @@ export default async function handler(req, res) {
 
     // Create email transporter
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: true, // Use true for port 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
     // Email content

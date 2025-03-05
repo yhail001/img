@@ -43,7 +43,7 @@ app.options('*', cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Main route for contact form submissions
-app.post('/api/contact', async (req, res) => {
+app.post('/js/contactForm.js', async (req, res) => {
     try {
         // Extract and validate form data
         const { name, email, message } = req.body;

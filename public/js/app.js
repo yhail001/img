@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             try {
-                const response = await fetch('public/contactForm.js', {
+                const response = await fetch('/js/contactForm.js', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -82,15 +82,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
             } catch (error) {
                 console.error("Form submission error:", error);
-                
+            
+                // Send error details to the server for logging
+                fetch('/log-error', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ error: error.message, stack: error.stack })
+                }).catch(err => console.error("Logging failed:", err));
+            
+                // UI feedback
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
-    
                 const messageEl = document.getElementById('formMessage');
                 messageEl.textContent = 'Network error. Please check your connection and try again.';
                 messageEl.className = 'form-message error';
                 messageEl.style.display = 'block';
-                
+            
                 setTimeout(() => {
                     messageEl.style.display = 'none';
                 }, 5000);
