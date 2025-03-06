@@ -81,7 +81,7 @@ nav {
             height: 100vh;
             width: 250px;
             z-index: 999;
-            background-color: rgba (255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
             display: none;
@@ -382,7 +382,7 @@ footer.container.padded20 {
             img {  /* Explicit styling for the image */
                 width: 100%;      /* Make the image responsive to its container */
                 max-width: 100%;  /* Ensure it doesn't exceed the container */
-                height: auto;     /* Maintain aspect ratio */
+                max-height: auto;     /* Maintain aspect ratio */
                 display: block;  /* Remove potential bottom margin from inline elements */
                 border-radius: 5px; /* Match research container */
                 filter: grayscale(0); /* Start with a grayscale image */

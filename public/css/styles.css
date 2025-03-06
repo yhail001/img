@@ -272,7 +272,7 @@ nav ul.sidebar {
   height: 100vh;
   width: 250px;
   z-index: 999;
-  background-color: rgba 255, 255, 255, 0.2;
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
@@ -333,57 +333,6 @@ header {
   box-sizing: border-box;
   margin: 0 auto; /* Centers the section horizontally */
   max-width: 1300px;
-}
-
-/*Controls-Navigation buttons Position and sizing*/
-.controls {
-  position: fixed;
-  z-index: 10;
-  top: 50%;
-  right: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-50%);
-}
-.controls .active-btn {
-  background-color: var(--color-blue) !important;
-  transition: all 0.4 ease-in-out;
-  border-radius: 5px; /* Added for rounded edges */
-}
-.controls .active-btn i {
-  color: var(--color-white) !important;
-}
-.controls .active-btn span {
-  color: var(--color-white);
-  text-align: left;
-  flex: 1;
-  padding-left: 0.5rem;
-  font-weight: 200;
-}
-.controls .control {
-  padding: 1rem;
-  cursor: pointer;
-  background-color: var(--color-grey-1);
-  width: 100px;
-  height: 50px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.7rem 0;
-  box-shadow: var(--box-shadow-1);
-  font-size: 0.9rem;
-  font-weight: 200;
-}
-.controls .control i {
-  font-size: 1.2rem;
-  color: var(--color-black);
-  pointer-events: none;
-}
-.controls .control:hover {
-  background-color: var(--color-grey-3);
 }
 
 .photo {
@@ -594,7 +543,7 @@ footer.container.padded20 .row h6 .footer-text {
 .researchs .research .image-container img { /* Explicit styling for the image */
   width: 100%; /* Make the image responsive to its container */
   max-width: 100%; /* Ensure it doesn't exceed the container */
-  height: auto; /* Maintain aspect ratio */
+  max-height: auto; /* Maintain aspect ratio */
   display: block; /* Remove potential bottom margin from inline elements */
   border-radius: 5px; /* Match research container */
   filter: grayscale(0); /* Start with a grayscale image */
