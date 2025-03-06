@@ -118,6 +118,12 @@
   header .header-content .right-header p {
     font-size: 1.3rem;
   }
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
   .about-container .right-about {
     grid-template-columns: 1fr;
   }
@@ -181,6 +187,9 @@
   .header-content .right-header .name {
     font-size: 1.5rem !important;
   }
+  .sidebar {
+    width: 100% !important;
+  }
   .about-container .right-about .about-item .abt-text .large-text {
     font-size: 2rem;
   }
@@ -196,4 +205,6 @@
   .logos:after {
     display: none;
   }
-}/*# sourceMappingURL=media.css.map */
+}
+
+/*# sourceMappingURL=media.css.map */

@@ -48,9 +48,6 @@
     padding: 3.5rem 2rem;
   }
   
-  .controls {
-    right: 0.5%;
-  }
 }
 
 /* Medium screens (1024px and below) */
@@ -122,27 +119,6 @@
     }
   }
   
-  .controls {
-    top: auto;
-    bottom: 0;
-    flex-direction: row;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: var(--color-grey-1);
-    padding: 0.5rem;
-    
-    .control {
-      margin: 0 0.6rem;
-      width: auto;
-      height: auto;
-      
-      span {
-        display: none;
-      }
-    }
-  }
 }
 
 /* Small screens (768px and below) */
@@ -161,6 +137,14 @@
     }
   }
   
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
   .about-container {
     .right-about {
       grid-template-columns: 1fr;
@@ -224,15 +208,6 @@
     }
   }
   
-  .controls {
-    .control {
-      padding: 0.8rem;
-      
-      i {
-        font-size: 1rem;
-      }
-    }
-  }
   
   .main-title {
     h2 {
@@ -264,6 +239,10 @@
   .header-content .right-header .name {
     font-size: 1.5rem !important;
   }
+
+  .sidebar {
+    width: 100% !important;
+  }
   
   .about-container .right-about .about-item .abt-text .large-text {
     font-size: 2rem;
@@ -274,11 +253,6 @@
     height: 40px;
   }
   
-  .controls .control {
-    margin: 0 0.4rem;
-    padding: 0.6rem;
-  }
-
   .logos:before,
   .logos:after {
       display: none;

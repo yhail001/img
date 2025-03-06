@@ -231,6 +231,67 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure it spans the full width */
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Ensure it's on top of other content */
+  /*display: flex;*/ /*added this to display the nav links horizontally and to fix the position*/
+}
+nav ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav ul li {
+  height: 50px;
+}
+nav ul li a {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover {
+  background-color: #f0f0f0;
+}
+nav ul li:first-child {
+  margin-right: auto;
+}
+nav ul.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba 255, 255, 255, 0.2;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+nav ul.sidebar li {
+  width: 100%;
+}
+nav ul.sidebar li a {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -586,6 +647,19 @@ footer.container.padded20 .row h6 .footer-text {
   font-weight: 300;
   color: var(--color-grey-5);
 }
+.logos .logos-slide {
+  display: inline-block;
+  animation: slide 35s infinite linear;
+  width: -moz-max-content;
+  width: max-content;
+}
+.logos .logos-slide img {
+  height: 50px;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 40px;
+}
 
 .logos:before,
 .logos:after {
@@ -616,7 +690,7 @@ footer.container.padded20 .row h6 .footer-text {
 .logos-slide {
   display: inline-block;
   gap: 20px;
-  animation: slide 30s infinite linear;
+  animation: slide 35s infinite linear;
   width: -moz-max-content;
   width: max-content;
 }
@@ -794,7 +868,7 @@ footer.container.padded20 .row h6 .footer-text {
 /*submit button*/
 .submit-con {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
 }

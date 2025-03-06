@@ -8,19 +8,20 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configure CORS
-const allowedOrigins = [
-    'http://localhost:3000',
-    'https://yohanneshaile.com',
-    'https://www.yohanneshaile.com',
-    'https://img-delta-ebon.vercel.app',
-];
-
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // CORS configuration
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://yohanneshaile.com',
+    'https://www.yohanneshaile.com',
+    'https://img-delta-ebon.vercel.app',
+    'http://192.168.1.78:3000'
+];
+
 app.use(cors({
     origin: function(origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)

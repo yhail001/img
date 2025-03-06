@@ -35,6 +35,78 @@ body{
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 // Styles for anchor elements to ensure they blend seamlessly with surrounding content
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;  /* Ensure it's on top of other content */
+    /*display: flex;*/ /*added this to display the nav links horizontally and to fix the position*/
+
+    ul {
+        display: flex;
+        width: 100%;
+        list-style: none;
+        justify-content: flex-end;
+        align-items: center;
+
+        li {
+            height: 50px;
+
+            a {
+                height: 100%;
+                padding: 0 30px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                }
+            }
+
+            &:first-child {
+                margin-right: auto;
+            }
+        }
+
+        &.sidebar {  // Targeting the UL with class "sidebar"
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba (255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            li {
+                width: 100%;
+
+                a {
+                    padding: 20px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+    menu-button {
+        display: none; /* Hide the menu button by default */
+    }
+}
+
 a{
     display: inline-block;
     text-decoration: none;
@@ -75,59 +147,6 @@ header{
     box-sizing: border-box;
     margin: 0 auto; /* Centers the section horizontally */
     max-width: 1300px;
-}
-
-/*Controls-Navigation buttons Position and sizing*/
-.controls{
-    position: fixed;
-    z-index: 10;
-    top: 50%;
-    right: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-    .active-btn{
-        background-color: var(--color-blue) !important;
-        transition: all .4 ease-in-out;
-        border-radius: 5px; /* Added for rounded edges */
-        i{
-            color: var(--color-white) !important;
-        }
-        // Navigation button text from AI, actually useful
-        span{
-            color: var(--color-white);
-            text-align: left;
-            flex: 1;           // Allow text to expand and fill the space
-            padding-left: 0.5rem; // Add some space between the icon and text
-            font-weight: 200;
-        }
-    } 
-    .control{
-        padding: 1rem;
-        cursor: pointer;
-        //i want the button to be clear-background and the words to be clickable
-        background-color: var(--color-grey-1);
-        width: 100px;
-        height: 50px;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: .7rem 0;
-        box-shadow: var(--box-shadow-1);
-        font-size: 0.9rem;
-        font-weight: 200;
-        i{
-            font-size: 1.2rem;
-            color: var(--color-black);
-            pointer-events: none;
-        }
-        &:hover {
-            background-color: var(--color-grey-3);
-        }
-    }
 }
 
 // main photo //
@@ -397,30 +416,45 @@ footer.container.padded20 {
 
 
 
-  @keyframes slide {
+@keyframes slide {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     to {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  }
-  
-  .logos {
+}
+
+.logos {
     overflow: hidden;
     padding: 60px 0;
     background: white;
     position: relative;
     width: 100%;
     white-space: nowrap;
+
     .logos-header {
         text-align: center;
         margin-bottom: 50px;
+
         h5 {
             font-size: 1.5rem;
             font-weight: 300;
             color: var(--color-grey-5);
         }
+    }
+
+    .logos-slide {
+        display: inline-block;
+        animation: slide 35s infinite linear;
+        width: max-content;
+    }
+
+    .logos-slide img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        margin: 0 40px;
     }
 }
 
@@ -433,6 +467,8 @@ footer.container.padded20 {
     content: "";
     z-index: 2;
 }
+
+
 
 // Media query to hide the gradient on smaller screens
 //this might mess with the media queries in the media.scss file
@@ -457,9 +493,8 @@ footer.container.padded20 {
 .logos-slide {
     display: inline-block;
     gap: 20px;
-    animation: slide 30s infinite linear;
+    animation: slide 35s infinite linear;
     width: max-content;
-
 }
 
 .logos-slide img {
@@ -648,7 +683,7 @@ footer.container.padded20 {
 /*submit button*/
 .submit-con {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 20px;
 

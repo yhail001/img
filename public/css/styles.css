@@ -231,6 +231,69 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure it spans the full width */
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Ensure it's on top of other content */
+  /*display: flex;*/ /*added this to display the nav links horizontally and to fix the position*/
+}
+nav ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav ul li {
+  height: 50px;
+}
+nav ul li a {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover {
+  background-color: #f0f0f0;
+}
+nav ul li:first-child {
+  margin-right: auto;
+}
+nav ul.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba 255, 255, 255, 0.2;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+nav ul.sidebar li {
+  width: 100%;
+}
+nav ul.sidebar li a {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+nav menu-button {
+  display: none; /* Hide the menu button by default */
+}
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -377,8 +440,7 @@ header .header-content .left-header .h-shape {
   left: 0;
   top: 0;
   z-index: -1; /*Kept as -1 to keep it above the background but below the image */
-  -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
-          clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
+  clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
 }
 header .header-content .left-header .image {
   border-radius: var(--br-sm-2);
@@ -393,8 +455,7 @@ header .header-content .left-header .image img {
   width: 100%;
   height: 100%;
   transition: all 0.4s ease-in-out;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 8px;
   background-color: transparent;
   filter: grayscale(100%);
@@ -586,6 +647,17 @@ footer.container.padded20 .row h6 .footer-text {
   font-weight: 300;
   color: var(--color-grey-5);
 }
+.logos .logos-slide {
+  display: inline-block;
+  animation: slide 35s infinite linear;
+  width: max-content;
+}
+.logos .logos-slide img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 40px;
+}
 
 .logos:before,
 .logos:after {
@@ -616,16 +688,14 @@ footer.container.padded20 .row h6 .footer-text {
 .logos-slide {
   display: inline-block;
   gap: 20px;
-  animation: slide 30s infinite linear;
-  width: -moz-max-content;
+  animation: slide 35s infinite linear;
   width: max-content;
 }
 
 .logos-slide img {
   height: 50px;
   width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   margin: 0 40px;
 }
 
@@ -716,6 +786,23 @@ footer.container.padded20 .row h6 .footer-text {
   color: var(--color-black);
   resize: none;
 }
+.contact-content-con .right-contact .form-message {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.contact-content-con .right-contact .form-message.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+}
+.contact-content-con .right-contact .form-message.error {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
 .contact-content-con .right-contact .i-c-2 {
   display: flex;
 }
@@ -777,7 +864,7 @@ footer.container.padded20 .row h6 .footer-text {
 /*submit button*/
 .submit-con {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
 }
@@ -827,4 +914,6 @@ footer.container.padded20 .row h6 .footer-text {
   transform: translate(-50%, -50%);
   font-weight: 700;
   font-size: 6.3rem;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
