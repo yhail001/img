@@ -34,9 +34,6 @@
   .contact-content-con {
     padding: 3.5rem 2rem;
   }
-  .controls {
-    right: 0.5%;
-  }
 }
 /* Medium screens (1024px and below) */
 @media screen and (max-width: 1024px) {
@@ -52,7 +49,6 @@
   }
   header .header-content .left-header .image {
     margin: 0 auto;
-    margin-left: -0.2rem;
     width: 90%;
   }
   header .header-content .right-header {
@@ -89,25 +85,6 @@
   .contact-content-con .right-contact {
     margin-left: 0;
     margin-top: 2.5rem;
-  }
-  .controls {
-    top: auto;
-    bottom: 0;
-    flex-direction: row;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    background-color: var(--color-grey-1);
-    padding: 0.5rem;
-  }
-  .controls .control {
-    margin: 0 0.6rem;
-    width: auto;
-    height: auto;
-  }
-  .controls .control span {
-    display: none;
   }
 }
 /* Small screens (768px and below) */
@@ -161,12 +138,6 @@
   header .header-content .right-header p {
     font-size: 1.1rem;
   }
-  .controls .control {
-    padding: 0.8rem;
-  }
-  .controls .control i {
-    font-size: 1rem;
-  }
   .main-title h2 {
     font-size: 2rem;
   }
@@ -196,10 +167,6 @@
   .contact-content-con .left-contact .contact-icon a {
     width: 40px;
     height: 40px;
-  }
-  .controls .control {
-    margin: 0 0.4rem;
-    padding: 0.6rem;
   }
   .logos:before,
   .logos:after {

@@ -171,6 +171,9 @@ header {
         height: 100%;
         z-index: -1; /* Place behind other content */
         opacity: 0.35;
+        background-size: cover; /* Ensure the image covers the entire container */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
       }
       
       .background::before {
@@ -182,6 +185,7 @@ header {
         height: 100%;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
       }
   
     .header-content {
@@ -210,13 +214,14 @@ header {
         }
   
         .image {
-          border-radius: var(--br-sm-2);
-          width: 150%;
-          height: 60%;
-          max-width: 400px;
-          margin-right: 2rem;
-          background-color: transparent;
-          border: var(--color-blue) 2px solid;
+            border-radius: var(--br-sm-2);
+            width: 150%;
+            max-width: 400px;
+            height: 60%;
+            max-height: 500px;
+            margin-right: 2rem;
+            background-color: transparent;
+            border: var(--color-blue) 2px solid;
   
           img {
             width: 100%;
@@ -353,6 +358,7 @@ footer.container.padded20 {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 3rem;
+    padding-bottom: 5rem;
 
     .research {
         position: relative;
@@ -509,6 +515,7 @@ footer.container.padded20 {
     display: flex;
     padding-top: 5.5rem;
     padding-bottom: 5rem;
+    
     .left-contact{
         flex: 2;
         h4{
