@@ -5,5 +5,17 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/server.js" }
+],
+"redirects": [
+    {
+      "source": "https://www.yohanneshaile.com",
+      "destination": "https://yohanneshaile.com",
+      "permanent": true
+    },
+    {
+      "source": "http://www.yohanneshaile.com",
+      "destination": "https://yohanneshaile.com",
+      "permanent": true
+    }
   ]
 }
